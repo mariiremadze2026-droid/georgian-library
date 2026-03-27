@@ -1,19 +1,22 @@
 body {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
   text-align: center;
-  background: #f5f5f5;
+  padding: 20px;
 }
 
 h1 {
-  color: #333;
+  margin-bottom: 20px;
 }
 
 input {
-  padding: 10px;
-  width: 80%;
-  margin: 10px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
+  width: 90%;
+  padding: 12px;
+  border-radius: 15px;
+  border: none;
+  margin-bottom: 20px;
+  font-size: 16px;
 }
 
 ul {
@@ -22,16 +25,19 @@ ul {
 }
 
 li {
-  background: white;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 10px;
+  background: rgba(255,255,255,0.2);
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
 }
 
 button {
-  padding: 12px;
-  background: #007AFF;
-  color: white;
+  margin-top: 20px;
+  padding: 15px 25px;
   border: none;
-  border-radius: 10px;
+  border-radius: 20px;
+  background: #4CAF50;
+  color: white;
+  font-size: 18px;
 }
