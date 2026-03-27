@@ -1,43 +1,87 @@
 body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
-  text-align: center;
-  padding: 20px;
+margin: 0;
+background: black;
+color: red;
+font-family: Arial;
+text-align: center;
 }
 
-h1 {
-  margin-bottom: 20px;
+canvas {
+position: fixed;
+z-index: -1;
 }
 
-input {
-  width: 90%;
-  padding: 12px;
-  border-radius: 15px;
-  border: none;
-  margin-bottom: 20px;
-  font-size: 16px;
+/* HEADER */
+.header {
+padding: 20px;
+font-size: 24px;
+text-shadow: 0 0 15px red;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+/* MENU */
+.menu a {
+display: block;
+margin: 20px auto;
+padding: 15px;
+width: 200px;
+background: #111;
+color: red;
+border-radius: 15px;
+text-decoration: none;
 }
 
-li {
-  background: rgba(255,255,255,0.2);
-  margin: 10px 0;
-  padding: 15px;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
+/* CARD */
+.card {
+margin: 20px auto;
+padding: 20px;
+width: 250px;
+background: #111;
+border-radius: 20px;
+position: relative;
 }
 
-button {
-  margin-top: 20px;
-  padding: 15px 25px;
-  border: none;
-  border-radius: 20px;
-  background: #4CAF50;
-  color: white;
-  font-size: 18px;
+/* 🌈 BORDER */
+.card::before {
+content: "";
+position: absolute;
+inset: -3px;
+border-radius: 20px;
+background: linear-gradient(red,orange,yellow,green,blue,violet,red);
+z-index: -1;
+animation: border 5s linear infinite;
+}
+
+@keyframes border {
+100% { filter: hue-rotate(360deg); }
+}
+
+/* TREE */
+.person {
+display: inline-block;
+margin: 10px;
+padding: 10px;
+background: #111;
+border-radius: 10px;
+}
+
+/* INPUT */
+input, textarea, select {
+background: black;
+color: red;
+border: 2px solid red;
+padding: 10px;
+}
+
+/* QUOTES */
+.quote-box {
+margin: 20px;
+padding: 15px;
+background: #111;
+box-shadow: 0 0 10px red;
+}
+
+/* MAP */
+#map iframe {
+width: 90%;
+height: 300px;
 }
