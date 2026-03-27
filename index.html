@@ -1,45 +1,21 @@
 <!DOCTYPE html>
 <html lang="ka">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ქართული ბიბლიოთეკა</title>
-
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Georgian Library</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<link rel="manifest" href="manifest.json">
 <body>
 
-<h1 class="title">📚 ქართული საგვარეულო ბიბლიოთეკა</h1>
+<h1>📚 Georgian Library</h1>
 
-<div class="box">
-<h2>გვარები</h2>
-<p>შეისწავლე ქართული გვარების ისტორია</p>
-</div>
+<input type="text" id="search" placeholder="ძებნა...">
 
-<div class="box">
-<h2>მწერლები</h2>
-<p>ქართული ლიტერატურის ისტორია</p>
-</div>
+<ul id="bookList"></ul>
 
-<div class="box">
-<h2>შენი ისტორია</h2>
-<p>დაწერე და დაბეჭდე შენი ოჯახის ისტორია</p>
-<button onclick="printText()">დაბეჭდვა</button>
-</div>
+<button onclick="shareApp()">📤 გაზიარება</button>
 
-<textarea id="text" placeholder="დაწერე შენი ისტორია..."></textarea>
-
-<audio autoplay loop>
-<source src="music.mp3" type="audio/mpeg">
-</audio>
-
-<script src="script.js"></script>
-
+<script src="JavaScript.js"></script>
 </body>
 </html>
-<script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js');
-}
-</script>
