@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: black;
+    color: red;
+    text-align: center;
+}
+
+.title {
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+/* კონტეინერი */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ბოქსები */
+.box {
+    background: black;
+    border: 3px solid red;
+    margin: 15px;
+    padding: 20px;
+    width: 250px;
+    border-radius: 15px;
+    animation: rainbow 5s infinite;
+}
+
+/* ღილაკი */
+button {
+    background: red;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* ტექსტის ველი */
+textarea {
+    width: 80%;
+    height: 150px;
+    margin-top: 20px;
+    background: black;
+    color: red;
+    border: 2px solid red;
+}
+
+/* ცისარტყელა ანიმაცია */
+@keyframes rainbow {
+    0% { border-color: red; }
+    20% { border-color: orange; }
+    40% { border-color: yellow; }
+    60% { border-color: green; }
+    80% { border-color: blue; }
+    100% { border-color: violet; }
+}
