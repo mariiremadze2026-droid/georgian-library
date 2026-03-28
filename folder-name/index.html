@@ -1,0 +1,40 @@
+mafia-game/index.html
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mafia Game</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>🔫 Mafia Game</h1>
+
+<input id="name" placeholder="მოთამაშე">
+<button onclick="add()">დამატება</button>
+
+<div id="players"></div>
+
+<button onclick="start()">დაწყება</button>
+
+<div id="game" class="hidden">
+
+  <h2 id="role"></h2>
+  <button onclick="next()">შემდეგი</button>
+
+  <div id="phase" class="big"></div>
+
+  <button onclick="night()">🌙 ღამე</button>
+  <button onclick="day()">☀️ დღე</button>
+
+  <div id="actions"></div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
