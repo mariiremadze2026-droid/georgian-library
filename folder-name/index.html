@@ -1,40 +1,28 @@
 <!DOCTYPE html>
 <html lang="ka">
 <head>
-<meta charset="UTF-8">
-<title>Mafia Imposter</title>
-
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Mafia Game</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<h1>👨‍🚀 Mafia Imposter</h1>
+<h1>🎭 Mafia Game</h1>
 
 <div id="setup">
-  <input type="number" id="players" placeholder="მოთამაშეების რაოდენობა">
-  <button onclick="startGame()">დაწყება</button>
+  <input id="playerName" placeholder="შეიყვანე სახელი">
+  <button onclick="addPlayer()">➕ დამატება</button>
+  <ul id="players"></ul>
+  <button onclick="startGame()">🚀 დაწყება</button>
 </div>
 
-<div id="game" style="display:none;">
-
-  <h2 id="playerTitle"></h2>
-
-  <button onclick="showRole()">როლის ნახვა</button>
-
-  <div id="roleBox" style="display:none;">
-    <h2 id="roleText"></h2>
-    <button onclick="nextPlayer()">შემდეგი</button>
-  </div>
-
-  <h2 id="phaseText"></h2>
-  <button onclick="nextPhase()">შემდეგი ფაზა</button>
-
-  <div id="voteArea"></div>
-
+<div id="game" class="hidden">
+  <h2 id="phase">🌙 Night</h2>
+  <div id="info"></div>
+  <div id="actions"></div>
+  <button onclick="nextPhase()">➡️ შემდეგი</button>
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
