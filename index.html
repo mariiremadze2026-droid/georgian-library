@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>Georgian Library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span>Georgian Library</span>
+</div>
+
+<!-- APP -->
+<div class="app">
+
+  <!-- HOME -->
+  <div class="screen active" id="home">
+
+    <div class="logo">📚</div>
+    <h1 class="title">Georgian Library</h1>
+
+    <input class="search" placeholder="ძებნა...">
+
+    <button class="btn">📚 წიგნები</button>
+    <button class="btn">🎨 მხატვრები</button>
+
+    <input class="input" placeholder="მითხარი რამე...">
+
+    <button class="btn">გაგზავნა</button>
+    <button class="btn">📩 გაზიარება</button>
+
+  </div>
+
+  <!-- სხვა გვერდები -->
+  <div class="screen" id="inbox">
+    <h2>Inbox</h2>
+  </div>
+
+  <div class="screen" id="explore">
+    <h2>Explore</h2>
+  </div>
+
+  <div class="screen" id="profile">
+    <h2>Profile</h2>
+  </div>
+
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="nav">
+  <button onclick="show('home')">🏠</button>
+  <button onclick="show('inbox')">📥</button>
+  <button onclick="show('explore')">🔭</button>
+  <button onclick="show('profile')">👤</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
