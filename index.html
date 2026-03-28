@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Georgian Library</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,13 +10,14 @@
 
   <h1>📚 Georgian Library</h1>
 
-  <input type="text" id="search" placeholder="ძებნა...">
+  <input type="text" placeholder="ძებნა...">
 
   <div class="container">
     <button class="button" onclick="showBooks()">📚 წიგნები</button>
     <button class="button" onclick="showArtists()">🎨 მხატვრები</button>
   </div>
 
+  <!-- 📦 შედეგები -->
   <div id="result"></div>
 
   <script>
@@ -27,8 +27,16 @@
     ];
 
     const artists = [
-      { name: "ნიკო ფიროსმანი" },
-      { name: "ლადო გუდიაშვილი" }
+      {
+        name: "ნიკო ფიროსმანი",
+        img: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Niko_Pirosmani.jpg",
+        bio: "ცნობილი ქართველი მხატვარი 🎨"
+      },
+      {
+        name: "ლადო გუდიაშვილი",
+        img: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Lado_Gudiashvili.jpg",
+        bio: "ქართული მხატვრობის ერთ-ერთი ლიდერი"
+      }
     ];
 
     function showBooks() {
@@ -52,7 +60,9 @@
       artists.forEach(artist => {
         result.innerHTML += `
           <div class="card">
+            <img src="${artist.img}">
             <h3>${artist.name}</h3>
+            <p>${artist.bio}</p>
           </div>
         `;
       });
