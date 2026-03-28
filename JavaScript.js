@@ -1,8 +1,21 @@
 // 📚 წიგნები
 const books = [
-  "ვეფხისტყაოსანი",
-  "დიდოსტატის მარჯვენა",
-  "დათა თუთაშხია"
+  {
+    name: "ვეფხისტყაოსანი",
+    author: "შოთა რუსთაველი"
+  },
+  {
+    name: "დიდოსტატის მარჯვენა",
+    author: "კონსტანტინე გამსახურდია"
+  },
+  {
+    name: "დათა თუთაშხია",
+    author: "ჭაბუა ამირეჯიბი"
+  },
+  {
+    name: "მე, ბებია, ილიკო და ილარიონი",
+    author: "ნოდარ დუმბაძე"
+  }
 ];
 
 // 🎨 მხატვრები
@@ -15,78 +28,75 @@ const artists = [
   {
     name: "დავით კაკაბაძე",
     img: "https://upload.wikimedia.org/wikipedia/commons/3/3a/David_Kakabadze.jpg",
-    bio: "ავანგარდული მხატვარი"
+    bio: "ავანგარდული ხელოვნების პიონერი"
+  },
+  {
+    name: "ელენე ახვლედიანი",
+    img: "https://upload.wikimedia.org/wikipedia/commons/5/59/Elene_Akhvlediani.jpg",
+    bio: "თბილისის ხედების მხატვარი"
   }
 ];
 
-let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-
-// 📚 წიგნები
+// 📚 წიგნების ჩვენება
 function showBooks() {
   const list = document.getElementById("bookList");
   list.innerHTML = "";
 
   books.forEach(book => {
     const li = document.createElement("li");
-    li.textContent = book;
-    list.appendChild(li);
-  });
-}
-
-// 🎨 მხატვრები
-function showArtists() {
-  const list = document.getElementById("bookList");
-  list.innerHTML = "";
-
-  artists.forEach(a => {
-    const li = document.createElement("li");
 
     li.innerHTML = `
-      <img src="${a.img}" style="width:200px;">
-      <h3>${a.name}</h3>
-      <p>${a.bio}</p>
-      <button onclick="addFavorite('${a.name}')">❤️</button>
+      <h3>${book.name}</h3>
+      <p>✍️ ${book.author}</p>
     `;
 
     list.appendChild(li);
   });
 }
 
-// ❤️ ფავორიტები
-function addFavorite(name) {
-  if (!favorites.includes(name)) {
-    favorites.push(name);
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-    alert("დაემატა ❤️");
-  }
-}
-
-function showFavorites() {
+// 🎨 მხატვრების ჩვენება
+function showArtists() {
   const list = document.getElementById("bookList");
   list.innerHTML = "";
 
-  favorites.forEach(name => {
+  artists.forEach(artist => {
     const li = document.createElement("li");
-    li.textContent = name;
+
+    li.innerHTML = `
+      <img src="${artist.img}" style="width:200px; border-radius:10px;">
+      <h3>${artist.name}</h3>
+      <p>${artist.bio}</p>
+    `;
+
     list.appendChild(li);
   });
 }
 
-// 🔍 ძებნა
+// 🔍 ძებნა (ორივეზე მუშაობს)
 function searchData() {
   const input = document.getElementById("search").value.toLowerCase();
   const list = document.getElementById("bookList");
   list.innerHTML = "";
 
-  const all = [...books, ...artists.map(a => a.name)];
+  const allBooks = books.filter(b =>
+    b.name.toLowerCase().includes(input)
+  );
 
-  all
-    .filter(item => item.toLowerCase().includes(input))
-    .forEach(item => {
-      const li = document.createElement("li");
-      li.textContent = item;
-      list.appendChild(li);
-    });
+  const allArtists = artists.filter(a =>
+    a.name.toLowerCase().includes(input)
+  );
+
+  allBooks.forEach(book => {
+    const li = document.createElement("li");
+    li.innerHTML = `<h3>${book.name}</h3><p>${book.author}</p>`;
+    list.appendChild(li);
+  });
+
+  allArtists.forEach(artist => {
+    const li = document.createElement("li");
+    li.innerHTML = `<h3>${artist.name}</h3>`;
+    list.appendChild(li);
+  });
 }
 
 // 📤 გაზიარება
@@ -114,7 +124,11 @@ function sendMessage() {
 
   if (text.includes("ფიროსმანი")) {
     response = "ნიკო ფიროსმანი იყო ცნობილი ქართველი მხატვარი 🎨";
-  } else if (text.includes("გამარჯობა")) {
+  }
+  else if (text.includes("ვეფხისტყაოსანი")) {
+    response = "ვეფხისტყაოსანი დაწერა შოთა რუსთაველმა 📚";
+  }
+  else if (text.includes("გამარჯობა")) {
     response = "გამარჯობა 👋";
   }
 
