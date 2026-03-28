@@ -1,0 +1,36 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background: #111;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #444;
+  color: white;
+}
+
+button:hover {
+  background: #666;
+}
+
+#players li {
+  list-style: none;
+}
+
+.fade {
+  animation: fade 0.5s;
+}
+
+@keyframes fade {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
