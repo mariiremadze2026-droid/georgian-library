@@ -1,8 +1,9 @@
 {
   "name": "Georgian Library",
   "short_name": "Library",
-  "start_url": "./index.html",
+  "start_url": ".",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#007AFF"
+  "background_color": "#000000",
+  "theme_color": "#ff0000",
+  "icons": []
 }
