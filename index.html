@@ -1,48 +1,63 @@
 <!DOCTYPE html>
 <html lang="ka">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Georgian Library</title>
+  <meta charset="UTF-8">
+  <title>Georgian Library</title>
 
-<link rel="stylesheet" href="style.css">
-<link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>📚 Georgian Library</h1>
+  <h1>📚 Georgian Library</h1>
 
-<input type="text" id="search" placeholder="ძებნა..." oninput="searchData()">
+  <input type="text" id="search" placeholder="ძებნა...">
 
-<br><br>
-
-<button class="button">📚 წიგნები</button>
-<button class="button">🎨 მხატვრები</button>
-<button class="button">🔍 ძებნა</button>
-<button class="button">📥 გადმოწერა</button>
-
-<ul id="bookList"></ul>
-
-<!-- 🤖 AI ჩატი -->
-<div id="chatBox">
-  <div id="chat"></div>
-  <input id="chatInput" placeholder="მკითხე რამე...">
-  <button onclick="sendMessage()">გაგზავნა</button>
-</div>
-
-<button onclick="shareApp()">📤 გაზიარება</button>
-
-<!-- 📸 Modal -->
-<div id="modal" onclick="closeModal()">
-  <div class="modal-content">
-    <img id="modalImg">
-    <h2 id="modalTitle"></h2>
-    <p id="modalText"></p>
+  <div class="container">
+    <button class="button" onclick="showBooks()">📚 წიგნები</button>
+    <button class="button" onclick="showArtists()">🎨 მხატვრები</button>
   </div>
-</div>
 
-<script src="JavaScript.js"></script>
+  <div id="result"></div>
+
+  <script>
+    const books = [
+      { name: "ვეფხისტყაოსანი", author: "შოთა რუსთაველი" },
+      { name: "დიდოსტატის მარჯვენა", author: "კონსტანტინე გამსახურდია" }
+    ];
+
+    const artists = [
+      { name: "ნიკო ფიროსმანი" },
+      { name: "ლადო გუდიაშვილი" }
+    ];
+
+    function showBooks() {
+      const result = document.getElementById("result");
+      result.innerHTML = "";
+
+      books.forEach(book => {
+        result.innerHTML += `
+          <div class="card">
+            <h3>${book.name}</h3>
+            <p>${book.author}</p>
+          </div>
+        `;
+      });
+    }
+
+    function showArtists() {
+      const result = document.getElementById("result");
+      result.innerHTML = "";
+
+      artists.forEach(artist => {
+        result.innerHTML += `
+          <div class="card">
+            <h3>${artist.name}</h3>
+          </div>
+        `;
+      });
+    }
+  </script>
 
 </body>
 </html>
