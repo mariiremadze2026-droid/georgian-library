@@ -1,52 +1,55 @@
 body {
-    background: black;
-    font-family: Arial;
+    background-color: black;
+    font-family: sans-serif;
     text-align: center;
-    padding: 40px;
+    padding: 60px 20px;
 }
 
-/* 🔥 სათაური */
+/* სათაური */
 h1 {
-    font-size: 60px; /* გაზრდილი */
+    font-size: 75px; /* უფრო დიდი */
     color: red;
-    text-shadow: 
-        0 0 10px red,
-        0 0 20px red,
-        0 0 40px red;
+    text-shadow:
+        0 0 15px red,
+        0 0 30px red,
+        0 0 60px darkred;
+    margin-bottom: 30px;
 }
 
-/* 🔍 ძებნა */
+/* ზედა search */
 input {
-    width: 90%;
-    max-width: 600px;
-    padding: 20px; /* გაზრდილი */
-    font-size: 22px; /* გაზრდილი */
-    border-radius: 15px;
+    width: 95%;
+    padding: 25px; /* დიდი */
+    font-size: 26px; /* დიდი ტექსტი */
+    border-radius: 30px;
     border: none;
     margin: 25px 0;
 }
 
-/* 🎨 ღილაკების კონტეინერი */
-.buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px; /* გაზრდილი დაშორება */
-}
-
-/* 🌈 ღილაკები */
+/* ღილაკები */
 button {
-    padding: 18px 40px; /* გაზრდილი */
-    font-size: 22px; /* გაზრდილი */
-    border-radius: 30px;
+    padding: 25px 50px; /* დიდი ღილაკები */
+    font-size: 24px;
     border: none;
+    border-radius: 40px;
+    margin: 20px;
     cursor: pointer;
-    background: linear-gradient(45deg, red, orange, yellow, green, blue);
+    background: linear-gradient(to right, red, orange, yellow, green, blue);
     color: black;
     font-weight: bold;
 }
 
-/* ✉️ ქვედა ნაწილი */
-.bottom {
-    margin-top: 30px;
+/* ქვედა input */
+.bottom-input {
+    width: 95%;
+    padding: 25px;
+    font-size: 26px;
+    border-radius: 30px;
+    border: none;
+    margin-top: 25px;
+}
+
+/* ქვედა ღილაკების კონტეინერი */
+.container {
+    margin-top: 40px;
 }
