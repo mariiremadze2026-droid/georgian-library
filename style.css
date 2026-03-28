@@ -1,75 +1,80 @@
+/* 🌑 ძირითადი სტილი */
 body {
+  font-family: Arial, sans-serif;
   background: black;
   color: red;
   text-align: center;
-  font-family: sans-serif;
+  padding: 20px;
 }
+
+/* 🔥 სათაური */
 h1 {
-  text-shadow: 0 0 50px 
-  .button {
-  padding: 50px 40px;   /* უფრო დიდი */
-  font-size: 50px;      /* ტექსტი დიდი */
-  border-radius: 50px;  /* რბილი კუთხეები */
-  margin: 50px;
+  font-size: 42px;
+  color: red;
+  text-shadow: 
+    0 0 5px red,
+    0 0 10px red,
+    0 0 20px red,
+    0 0 40px darkred;
+}
+
+/* 🔍 search input */
+input {
+  width: 70%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+  font-size: 16px;
+}
+
+/* 🌈 ღილაკები (გადიდებული მაგრამ იგივე სტილი) */
+.button {
   display: inline-block;
-  width: 100%;           /* თითქმის მთელ ეკრანზე */
-  max-width: 300px;
-  text-align: center;
+  padding: 18px 30px;      /* გაზრდილი */
+  margin: 10px;
+  font-size: 20px;         /* გაზრდილი ტექსტი */
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+
+  /* შენს სტილს ვტოვებთ */
+  background: linear-gradient(45deg, red, orange, yellow, green, blue);
+  color: black;
 }
-button:hover {
-  transform: scale(1.1);
+
+/* 🖱 hover ეფექტი (მსუბუქი) */
+.button:hover {
+  transform: scale(1.05);
 }
+
+/* 📦 ბარათები (წიგნები / მხატვრები) */
 .card {
   background: black;
   border: 2px solid red;
   border-radius: 20px;
-  padding: 15px;
-  margin: 15px;
-  box-shadow: 0 0 20px red;
-  transition: 0.3s;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px red;
 }
 
-.card:hover {
-  transform: scale(1.05);
-}
-
+/* 🖼 სურათები */
 .card img {
   width: 100%;
   border-radius: 15px;
-  cursor: pointer;
+  margin-bottom: 10px;
 }
 
-/* Modal */
-#modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.9);
-  justify-content: center;
-  align-items: center;
-}
+/* 📱 responsive (მობილურზე უკეთესი) */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 32px;
+  }
 
-.modal-content {
-  color: white;
-}
-
-.modal-content img {
-  max-width: 90%;
-  border-radius: 20px;
-}
-
-/* Chat */
-#chatBox {
-  margin-top: 20px;
-}
-
-.user {
-  color: lightblue;
-}
-
-.bot {
-  color: yellow;
+  .button {
+    width: 80%;
+    font-size: 18px;
+  }
 }
