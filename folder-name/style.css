@@ -1,46 +1,60 @@
 body {
   margin: 0;
-  background: black;
+  background: radial-gradient(circle, #000, #111);
   color: white;
-  font-family: sans-serif;
+  font-family: Arial;
   text-align: center;
 }
 
 h1 {
   color: red;
   text-shadow: 0 0 20px red;
-  margin-top: 40px;
-}
-
-input {
-  padding: 15px;
-  margin: 10px;
-  border-radius: 20px;
-  border: none;
-  font-size: 18px;
 }
 
 button {
   padding: 15px 30px;
   margin: 10px;
-  border-radius: 30px;
+  border-radius: 25px;
   border: none;
-  font-size: 18px;
-  cursor: pointer;
-  background: linear-gradient(45deg, red, yellow, green, blue);
-  color: black;
+  background: linear-gradient(45deg, red, orange, purple);
+  color: white;
   font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-#players {
-  margin-top: 20px;
+button:hover {
+  transform: scale(1.1);
 }
 
-.big {
-  font-size: 28px;
-  margin: 20px;
+input {
+  padding: 15px;
+  border-radius: 15px;
+  border: none;
 }
 
-.hidden {
-  display: none;
+/* 🎬 animation overlay */
+#overlay {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:black;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+
+#overlayText {
+  font-size:40px;
+  color:red;
+  text-shadow:0 0 20px red;
+  animation: fade 1s infinite alternate;
+}
+
+@keyframes fade {
+  from {opacity:0.2;}
+  to {opacity:1;}
 }
