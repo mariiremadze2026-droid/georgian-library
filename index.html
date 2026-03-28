@@ -2,74 +2,10 @@
 <html lang="ka">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Georgian Library</title>
 
-  <style>
-    body {
-      background: black;
-      color: white;
-      font-family: sans-serif;
-      text-align: center;
-      padding: 40px;
-    }
-
-    h1 {
-      color: red;
-      font-size: 40px;
-      text-shadow: 0 0 10px red, 0 0 30px red;
-    }
-
-    input {
-      width: 80%;
-      padding: 15px;
-      border-radius: 20px;
-      border: none;
-      margin: 20px 0;
-      font-size: 18px;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .btn {
-      padding: 20px 40px;
-      font-size: 20px;
-      border-radius: 30px;
-      border: none;
-      cursor: pointer;
-      background: linear-gradient(90deg, red, orange, yellow, green, blue);
-      color: black;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      transform: scale(1.1);
-    }
-
-    #result {
-      margin-top: 30px;
-    }
-
-    .card {
-      background: #111;
-      border: 2px solid red;
-      border-radius: 20px;
-      padding: 15px;
-      margin: 15px auto;
-      width: 80%;
-      max-width: 400px;
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-    }
-  </style>
-
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -79,31 +15,49 @@
   <!-- 🔍 SEARCH -->
   <input type="text" id="search" placeholder="ძებნა..." oninput="searchData()">
 
-  <!-- 🎯 BUTTONS -->
+  <!-- 🎯 მთავარი ღილაკები -->
   <div class="buttons">
-    <button class="btn" onclick="showBooks()">📚 წიგნები</button>
-    <button class="btn" onclick="showArtists()">🎨 მხატვრები</button>
+    <button onclick="showBooks()">📚 წიგნები</button>
+    <button onclick="showArtists()">🎨 მხატვრები</button>
   </div>
 
-  <!-- 📦 RESULT -->
+  <!-- 📦 შედეგები -->
   <div id="result"></div>
 
+  <!-- ✉️ ქვედა ნაწილი -->
+  <input class="bottom-input" id="message" type="text" placeholder="მითხარი რამე...">
+
+  <div class="buttons">
+    <button onclick="sendMessage()">გაგზავნა</button>
+    <button onclick="share()">📩 გაზიარება</button>
+  </div>
+
+  <!-- 🧠 SCRIPT -->
   <script>
+
     let currentData = [];
 
     const books = [
       { name: "ვეფხისტყაოსანი", author: "შოთა რუსთაველი" },
-      { name: "დიდოსტატის მარჯვენა", author: "კონსტანტინე გამსახურდია" }
+      { name: "დიდოსტატის მარჯვენა", author: "კონსტანტინე გამსახურდია" },
+      { name: "ბაში-აჩუკი", author: "აკაკი წერეთელი" }
     ];
 
     const artists = [
       {
         name: "ნიკო ფიროსმანი",
-        img: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Niko_Pirosmani.jpg"
+        img: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Niko_Pirosmani.jpg",
+        bio: "ცნობილი ქართველი მხატვარი"
       },
       {
         name: "ლადო გუდიაშვილი",
-        img: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Lado_Gudiashvili.jpg"
+        img: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Lado_Gudiashvili.jpg",
+        bio: "ქართული მოდერნიზმის წარმომადგენელი"
+      },
+      {
+        name: "ელენე ახვლედიანი",
+        img: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Elene_Akhvlediani.jpg",
+        bio: "ცნობილი ქართველი მხატვარი ქალი"
       }
     ];
 
@@ -124,7 +78,7 @@
       data.forEach(item => {
         result.innerHTML += `
           <div class="card">
-            <h3>${item.name}</h3>
+            <h2>${item.name}</h2>
             <p>${item.author}</p>
           </div>
         `;
@@ -139,7 +93,8 @@
         result.innerHTML += `
           <div class="card">
             <img src="${item.img}">
-            <h3>${item.name}</h3>
+            <h2>${item.name}</h2>
+            <p>${item.bio}</p>
           </div>
         `;
       });
@@ -158,6 +113,16 @@
         displayArtists(filtered);
       }
     }
+
+    function sendMessage() {
+      const msg = document.getElementById("message").value;
+      alert("შენ დაწერე: " + msg);
+    }
+
+    function share() {
+      alert("გაზიარება მალე დაემატება 📩");
+    }
+
   </script>
 
 </body>
