@@ -4,17 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Georgian Library</title>
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
 <h1>📚 Georgian Library</h1>
 
-<input type="text" id="search" placeholder="ძებნა...">
+<!-- 🔍 ძებნა -->
+<input type="text" id="search" placeholder="ძებნა..." onkeyup="searchData()">
 
+<!-- 🎛️ ღილაკები -->
+<div>
+  <button onclick="showBooks()">📚 წიგნები</button>
+  <button onclick="showArtists()">🎨 მხატვრები</button>
+  <button onclick="showFavorites()">❤️ ფავორიტები</button>
+  <button onclick="shareApp()">📤 გაზიარება</button>
+</div>
+
+<!-- 📄 სია -->
 <ul id="bookList"></ul>
 
-<button onclick="shareApp()">📤 გაზიარება</button>
+<!-- 🤖 AI ჩატი -->
+<h2>🤖 AI ჩატი</h2>
+
+<div id="chatBox"></div>
+
+<input type="text" id="userInput" placeholder="დასვი კითხვა...">
+<button onclick="sendMessage()">გაგზავნა</button>
 
 <script src="JavaScript.js"></script>
+
 </body>
-</html>
+</html
