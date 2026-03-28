@@ -4,42 +4,93 @@
   <meta charset="UTF-8">
   <title>Georgian Library</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: red;
+      font-size: 40px;
+      text-shadow: 0 0 10px red, 0 0 30px red;
+    }
+
+    input {
+      width: 80%;
+      padding: 15px;
+      border-radius: 20px;
+      border: none;
+      margin: 20px 0;
+      font-size: 18px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .btn {
+      padding: 20px 40px;
+      font-size: 20px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(90deg, red, orange, yellow, green, blue);
+      color: black;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+    }
+
+    #result {
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #111;
+      border: 2px solid red;
+      border-radius: 20px;
+      padding: 15px;
+      margin: 15px auto;
+      width: 80%;
+      max-width: 400px;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  </style>
+
 </head>
 
 <body>
 
-  <!-- 🔥 სათაური -->
   <h1>📚 Georgian Library</h1>
 
-  <div class="container">
+  <!-- 🔍 SEARCH -->
+  <input type="text" id="search" placeholder="ძებნა..." oninput="searchData()">
 
-    <!-- 🔍 ძებნა -->
-    <input type="text" placeholder="ძებნა...">
-
-    <!-- 📚 მთავარი ღილაკები -->
-    <div class="row">
-      <button onclick="showBooks()">📚 წიგნები</button>
-      <button onclick="showArtists()">🎨 მხატვრები</button>
-    </div>
-
-    <!-- 🔎 დამატებითი input -->
-    <input type="text" placeholder="მითხე რამე...">
-
-    <!-- 🚀 მოქმედებები -->
-    <div class="row">
-      <button onclick="sendMessage()">გაგზავნა</button>
-      <button onclick="download()">📩 გაზიარება</button>
-    </div>
-
+  <!-- 🎯 BUTTONS -->
+  <div class="buttons">
+    <button class="btn" onclick="showBooks()">📚 წიგნები</button>
+    <button class="btn" onclick="showArtists()">🎨 მხატვრები</button>
   </div>
 
-  <!-- 📦 შედეგები -->
+  <!-- 📦 RESULT -->
   <div id="result"></div>
 
-  <!-- 🧠 JS -->
   <script>
+    let currentData = [];
+
     const books = [
       { name: "ვეფხისტყაოსანი", author: "შოთა რუსთაველი" },
       { name: "დიდოსტატის მარჯვენა", author: "კონსტანტინე გამსახურდია" }
@@ -48,51 +99,64 @@
     const artists = [
       {
         name: "ნიკო ფიროსმანი",
-        img: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Niko_Pirosmani.jpg",
-        bio: "ცნობილი ქართველი მხატვარი 🎨"
+        img: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Niko_Pirosmani.jpg"
       },
       {
         name: "ლადო გუდიაშვილი",
-        img: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Lado_Gudiashvili.jpg",
-        bio: "ქართული მხატვრობის ერთ-ერთი ლიდერი"
+        img: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Lado_Gudiashvili.jpg"
       }
     ];
 
     function showBooks() {
-      const result = document.getElementById("result");
-      result.innerHTML = "";
-
-      books.forEach(book => {
-        result.innerHTML += `
-          <div class="card">
-            <h3>${book.name}</h3>
-            <p>${book.author}</p>
-          </div>
-        `;
-      });
+      currentData = books;
+      displayBooks(books);
     }
 
     function showArtists() {
+      currentData = artists;
+      displayArtists(artists);
+    }
+
+    function displayBooks(data) {
       const result = document.getElementById("result");
       result.innerHTML = "";
 
-      artists.forEach(artist => {
+      data.forEach(item => {
         result.innerHTML += `
           <div class="card">
-            <img src="${artist.img}">
-            <h3>${artist.name}</h3>
-            <p>${artist.bio}</p>
+            <h3>${item.name}</h3>
+            <p>${item.author}</p>
           </div>
         `;
       });
     }
 
-    function sendMessage() {
-      alert("გაგზავნა მუშაობს 🚀");
+    function displayArtists(data) {
+      const result = document.getElementById("result");
+      result.innerHTML = "";
+
+      data.forEach(item => {
+        result.innerHTML += `
+          <div class="card">
+            <img src="${item.img}">
+            <h3>${item.name}</h3>
+          </div>
+        `;
+      });
     }
 
-    function download() {
-      alert("გაზიარება მალე დაემატება 📩");
+    function searchData() {
+      const value = document.getElementById("search").value.toLowerCase();
+
+      const filtered = currentData.filter(item =>
+        item.name.toLowerCase().includes(value)
+      );
+
+      if (currentData === books) {
+        displayBooks(filtered);
+      } else {
+        displayArtists(filtered);
+      }
     }
   </script>
 
