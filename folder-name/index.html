@@ -1,40 +1,40 @@
-mafia-game/index.html
 <!DOCTYPE html>
 <html lang="ka">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mafia Game</title>
+<title>Mafia Imposter</title>
 
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>🔫 Mafia Game</h1>
+<h1>👨‍🚀 Mafia Imposter</h1>
 
-<input id="name" placeholder="მოთამაშე">
-<button onclick="add()">დამატება</button>
+<div id="setup">
+  <input type="number" id="players" placeholder="მოთამაშეების რაოდენობა">
+  <button onclick="startGame()">დაწყება</button>
+</div>
 
-<div id="players"></div>
+<div id="game" style="display:none;">
 
-<button onclick="start()">დაწყება</button>
+  <h2 id="playerTitle"></h2>
 
-<div id="game" class="hidden">
+  <button onclick="showRole()">როლის ნახვა</button>
 
-  <h2 id="role"></h2>
-  <button onclick="next()">შემდეგი</button>
+  <div id="roleBox" style="display:none;">
+    <h2 id="roleText"></h2>
+    <button onclick="nextPlayer()">შემდეგი</button>
+  </div>
 
-  <div id="phase" class="big"></div>
+  <h2 id="phaseText"></h2>
+  <button onclick="nextPhase()">შემდეგი ფაზა</button>
 
-  <button onclick="night()">🌙 ღამე</button>
-  <button onclick="day()">☀️ დღე</button>
-
-  <div id="actions"></div>
+  <div id="voteArea"></div>
 
 </div>
 
-<script src="app.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
