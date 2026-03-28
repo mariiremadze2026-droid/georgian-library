@@ -75,3 +75,66 @@ button:hover {
   transform: scale(1.1);
   box-shadow: 0 0 25px red;
 }
+body {
+  background: black;
+  color: red;
+  text-align: center;
+  font-family: sans-serif;
+  animation: bgChange 5s infinite;
+}
+
+h1 {
+  text-shadow: 0 0 10px red;
+}
+
+button {
+  background: linear-gradient(45deg, red, orange, yellow, green, blue);
+  color: black;
+  padding: 12px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+}
+
+input {
+  padding: 10px;
+  width: 80%;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+li {
+  list-style: none;
+  background: #111;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* 🌈 ანიმაცია */
+@keyframes bgChange {
+  0% { background: black; }
+  25% { background: #111; }
+  50% { background: #222; }
+  75% { background: #111; }
+  100% { background: black; }
+}
+
+/* 🤖 ჩატი */
+#chatBox {
+  background: #111;
+  border: 1px solid red;
+  height: 200px;
+  overflow-y: scroll;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.user {
+  color: lightgreen;
+}
+
+.bot {
+  color: red;
+}
