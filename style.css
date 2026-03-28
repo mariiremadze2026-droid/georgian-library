@@ -4,16 +4,15 @@ body {
   text-align: center;
   font-family: sans-serif;
 }
-
 h1 {
-  text-shadow: 0 0 20px 
+  text-shadow: 0 0 50px 
   .button {
-  padding: 20px 40px;   /* უფრო დიდი */
-  font-size: 20px;      /* ტექსტი დიდი */
-  border-radius: 20px;  /* რბილი კუთხეები */
-  margin: 15px;
+  padding: 50px 40px;   /* უფრო დიდი */
+  font-size: 50px;      /* ტექსტი დიდი */
+  border-radius: 50px;  /* რბილი კუთხეები */
+  margin: 50px;
   display: inline-block;
-  width: 80%;           /* თითქმის მთელ ეკრანზე */
+  width: 100%;           /* თითქმის მთელ ეკრანზე */
   max-width: 300px;
   text-align: center;
 }
