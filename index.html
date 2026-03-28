@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Georgian Library</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+<h1>📚 Georgian Library</h1>
+
+<input type="text" id="search" placeholder="ძებნა..." oninput="searchData()">
+
+<br><br>
+
+<button onclick="showBooks()">📚 წიგნები</button>
+<button onclick="showArtists()">🎨 მხატვრები</button>
+
+<ul id="bookList"></ul>
+
+<!-- 🤖 AI ჩატი -->
+<div id="chatBox">
+  <div id="chat"></div>
+  <input id="chatInput" placeholder="მკითხე რამე...">
+  <button onclick="sendMessage()">გაგზავნა</button>
+</div>
+
+<button onclick="shareApp()">📤 გაზიარება</button>
+
+<!-- 📸 Modal -->
+<div id="modal" onclick="closeModal()">
+  <div class="modal-content">
+    <img id="modalImg">
+    <h2 id="modalTitle"></h2>
+    <p id="modalText"></p>
+  </div>
+</div>
+
+<script src="JavaScript.js"></script>
+
+</body>
+</html>
