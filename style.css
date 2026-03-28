@@ -6,25 +6,20 @@ body {
 }
 
 h1 {
-  text-shadow: 0 0 20px red;
+  text-shadow: 0 0 20px 
+  .button {
+  padding: 20px 40px;   /* უფრო დიდი */
+  font-size: 20px;      /* ტექსტი დიდი */
+  border-radius: 20px;  /* რბილი კუთხეები */
+  margin: 15px;
+  display: inline-block;
+  width: 80%;           /* თითქმის მთელ ეკრანზე */
+  max-width: 300px;
+  text-align: center;
 }
-
-button {
-  margin: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  border: none;
-  background: linear-gradient(45deg, red, orange, yellow, green, blue);
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
 button:hover {
   transform: scale(1.1);
 }
-
 .card {
   background: black;
   border: 2px solid red;
