@@ -1,80 +1,59 @@
-/* 🌑 ძირითადი სტილი */
+/* 🔴 მთლიანი გვერდი */
 body {
-  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
   background: black;
-  color: red;
+  font-family: Arial, sans-serif;
   text-align: center;
-  padding: 20px;
 }
 
 /* 🔥 სათაური */
 h1 {
-  font-size: 42px;
+  font-size: 50px;
   color: red;
-  text-shadow: 
-    0 0 5px red,
+  margin-top: 40px;
+
+  text-shadow:
     0 0 10px red,
     0 0 20px red,
     0 0 40px darkred;
 }
 
-/* 🔍 search input */
+/* 🔍 input ველები */
 input {
   width: 70%;
-  padding: 12px;
-  border-radius: 10px;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 20px;
   border: none;
-  margin: 10px;
-  font-size: 16px;
+  font-size: 18px;
+  text-align: center;
 }
 
-/* 🌈 ღილაკები (გადიდებული მაგრამ იგივე სტილი) */
+/* 🎨 ღილაკები (ყველა ერთნაირი) */
 .button {
-  display: inline-block;
-  padding: 18px 30px;      /* გაზრდილი */
-  margin: 10px;
-  font-size: 20px;         /* გაზრდილი ტექსტი */
-  border-radius: 20px;
+  font-size: 22px;
+  padding: 18px 35px;
+  border-radius: 30px;
   border: none;
   cursor: pointer;
+  margin: 10px;
 
-  /* შენს სტილს ვტოვებთ */
+  /* 🌈 ფერები (შენი სტილი) */
   background: linear-gradient(45deg, red, orange, yellow, green, blue);
   color: black;
+  font-weight: bold;
+
+  /* 💥 ანიმაცია */
+  transition: 0.3s;
 }
 
-/* 🖱 hover ეფექტი (მსუბუქი) */
+/* hover ეფექტი */
 .button:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
-/* 📦 ბარათები (წიგნები / მხატვრები) */
-.card {
-  background: black;
-  border: 2px solid red;
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px auto;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 0 15px red;
-}
-
-/* 🖼 სურათები */
-.card img {
-  width: 100%;
-  border-radius: 15px;
-  margin-bottom: 10px;
-}
-
-/* 📱 responsive (მობილურზე უკეთესი) */
-@media (max-width: 600px) {
-  h1 {
-    font-size: 32px;
-  }
-
-  .button {
-    width: 80%;
-    font-size: 18px;
-  }
+/* 📦 კონტეინერი */
+.container {
+  margin-top: 30px;
 }
