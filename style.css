@@ -1,64 +1,52 @@
 body {
-  margin: 0;
-  padding: 0;
-  background: black;
-  font-family: sans-serif;
-  text-align: center;
+    background: black;
+    font-family: Arial;
+    text-align: center;
+    padding: 40px;
 }
 
 /* 🔥 სათაური */
 h1 {
-  color: red;
-  font-size: 48px;
-  text-shadow:
-    0 0 10px red,
-    0 0 20px red,
-    0 0 40px darkred;
-  margin-top: 40px;
+    font-size: 60px; /* გაზრდილი */
+    color: red;
+    text-shadow: 
+        0 0 10px red,
+        0 0 20px red,
+        0 0 40px red;
 }
 
-/* 🔍 search */
+/* 🔍 ძებნა */
 input {
-  width: 85%;
-  max-width: 500px;
-  padding: 20px;
-  border-radius: 20px;
-  border: none;
-  margin: 20px auto;
-  display: block;
-  font-size: 18px;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px; /* გაზრდილი */
+    font-size: 22px; /* გაზრდილი */
+    border-radius: 15px;
+    border: none;
+    margin: 25px 0;
 }
 
-/* 📦 კონტეინერი (ძალიან მნიშვნელოვანია) */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
-}
-
-/* 🎯 ღილაკების რიგი */
-.row {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
+/* 🎨 ღილაკების კონტეინერი */
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px; /* გაზრდილი დაშორება */
 }
 
 /* 🌈 ღილაკები */
 button {
-  padding: 18px 30px;
-  font-size: 18px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: bold;
-  background: linear-gradient(45deg, red, orange, yellow, green, blue);
-  color: black;
-  transition: 0.3s;
+    padding: 18px 40px; /* გაზრდილი */
+    font-size: 22px; /* გაზრდილი */
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(45deg, red, orange, yellow, green, blue);
+    color: black;
+    font-weight: bold;
 }
 
-/* ✨ hover */
-button:hover {
-  transform: scale(1.1);
+/* ✉️ ქვედა ნაწილი */
+.bottom {
+    margin-top: 30px;
 }
