@@ -3,23 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <title>Georgian Library</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+  <!-- 🔥 სათაური -->
   <h1>📚 Georgian Library</h1>
 
-  <input type="text" placeholder="ძებნა...">
-
   <div class="container">
-    <button class="button" onclick="showBooks()">📚 წიგნები</button>
-    <button class="button" onclick="showArtists()">🎨 მხატვრები</button>
+
+    <!-- 🔍 ძებნა -->
+    <input type="text" placeholder="ძებნა...">
+
+    <!-- 📚 მთავარი ღილაკები -->
+    <div class="row">
+      <button onclick="showBooks()">📚 წიგნები</button>
+      <button onclick="showArtists()">🎨 მხატვრები</button>
+    </div>
+
+    <!-- 🔎 დამატებითი input -->
+    <input type="text" placeholder="მითხე რამე...">
+
+    <!-- 🚀 მოქმედებები -->
+    <div class="row">
+      <button onclick="sendMessage()">გაგზავნა</button>
+      <button onclick="download()">📩 გაზიარება</button>
+    </div>
+
   </div>
 
   <!-- 📦 შედეგები -->
   <div id="result"></div>
 
+  <!-- 🧠 JS -->
   <script>
     const books = [
       { name: "ვეფხისტყაოსანი", author: "შოთა რუსთაველი" },
@@ -66,6 +85,14 @@
           </div>
         `;
       });
+    }
+
+    function sendMessage() {
+      alert("გაგზავნა მუშაობს 🚀");
+    }
+
+    function download() {
+      alert("გაზიარება მალე დაემატება 📩");
     }
   </script>
 
