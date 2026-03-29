@@ -1,12 +1,41 @@
 body {
-  background: black;
+  background: #0b0b0b;
   color: white;
   text-align: center;
   font-family: sans-serif;
 }
 
+h1 {
+  color: red;
+  text-shadow: 0 0 15px red;
+}
+
 button {
-  padding: 15px;
-  font-size: 18px;
+  padding: 12px 20px;
+  margin: 10px;
+  border-radius: 15px;
+  border: none;
+  background: #222;
+  color: white;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: red;
+}
+
+.hidden {
+  display: none;
+}
+
+#roleBox {
+  font-size: 28px;
   margin-top: 20px;
+  animation: fade 0.5s;
+}
+
+@keyframes fade {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
