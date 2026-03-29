@@ -2,61 +2,60 @@
 <html lang="ka">
 <head>
   <meta charset="UTF-8">
-  <title>Georgian Library</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoLibrary</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-  <span>Georgian Library</span>
-</div>
+<!-- HOME PAGE -->
+<div id="home" class="page active">
 
-<!-- APP -->
-<div class="app">
+  <div class="icon">📚</div>
+  <h1>Georgian Library</h1>
 
-  <!-- HOME -->
-  <div class="screen active" id="home">
+  <input type="text" placeholder="ძებნა..." id="search">
 
-    <div class="logo">📚</div>
-    <h1 class="title">Georgian Library</h1>
+  <button onclick="goBooks()">📚 წიგნები</button>
+  <button onclick="goArtists()">🎨 მხატვრები</button>
 
-    <input class="search" placeholder="ძებნა...">
+  <input type="text" placeholder="მითხარი რამე..." id="message">
 
-    <button class="btn">📚 წიგნები</button>
-    <button class="btn">🎨 მხატვრები</button>
-
-    <input class="input" placeholder="მითხარი რამე...">
-
-    <button class="btn">გაგზავნა</button>
-    <button class="btn">📩 გაზიარება</button>
-
-  </div>
-
-  <!-- სხვა გვერდები -->
-  <div class="screen" id="inbox">
-    <h2>Inbox</h2>
-  </div>
-
-  <div class="screen" id="explore">
-    <h2>Explore</h2>
-  </div>
-
-  <div class="screen" id="profile">
-    <h2>Profile</h2>
-  </div>
+  <button onclick="send()">გაგზავნა</button>
+  <button onclick="share()">📩 გაზიარება</button>
 
 </div>
 
-<!-- BOTTOM NAV -->
-<div class="nav">
-  <button onclick="show('home')">🏠</button>
-  <button onclick="show('inbox')">📥</button>
-  <button onclick="show('explore')">🔭</button>
-  <button onclick="show('profile')">👤</button>
+<!-- BOOK PAGE -->
+<div id="books" class="page">
+
+  <button class="back" onclick="goHome()">⬅ უკან</button>
+
+  <h2>ვეფხისტყაოსანი</h2>
+
+  <p class="text">
+  შოთა რუსთაველის უდიდესი ეპოსი.  
+  აქ შეგიძლია დაამატო სრული ტექსტი ან ისტორიები 📖
+  </p>
+
+  <!-- MUSIC PLAYER -->
+  <audio controls>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+</div>
+
+<!-- ARTISTS PAGE -->
+<div id="artists" class="page">
+
+  <button class="back" onclick="goHome()">⬅ უკან</button>
+
+  <h2>მხატვრები</h2>
+
+  <p>აქ დაამატე ქართველი მხატვრების ინფორმაცია 🎨</p>
+
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
