@@ -1,61 +1,30 @@
-<!DOCTYPE html>
-<html lang="ka">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GeoLibrary</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+function showPage(pageId) {
+  document.querySelectorAll(".page").forEach(p => {
+    p.classList.remove("active");
+  });
 
-<!-- HOME PAGE -->
-<div id="home" class="page active">
+  document.getElementById(pageId).classList.add("active");
+}
 
-  <div class="icon">📚</div>
-  <h1>Georgian Library</h1>
+// NAVIGATION
+function goHome() {
+  showPage("home");
+}
 
-  <input type="text" placeholder="ძებნა..." id="search">
+function goBooks() {
+  showPage("books");
+}
 
-  <button onclick="goBooks()">📚 წიგნები</button>
-  <button onclick="goArtists()">🎨 მხატვრები</button>
+function goArtists() {
+  showPage("artists");
+}
 
-  <input type="text" placeholder="მითხარი რამე..." id="message">
+// ACTIONS
+function send() {
+  let msg = document.getElementById("message").value;
+  alert("გაიგზავნა: " + msg);
+}
 
-  <button onclick="send()">გაგზავნა</button>
-  <button onclick="share()">📩 გაზიარება</button>
-
-</div>
-
-<!-- BOOK PAGE -->
-<div id="books" class="page">
-
-  <button class="back" onclick="goHome()">⬅ უკან</button>
-
-  <h2>ვეფხისტყაოსანი</h2>
-
-  <p class="text">
-  შოთა რუსთაველის უდიდესი ეპოსი.  
-  აქ შეგიძლია დაამატო სრული ტექსტი ან ისტორიები 📖
-  </p>
-
-  <!-- MUSIC PLAYER -->
-  <audio controls>
-    <source src="music.mp3" type="audio/mpeg">
-  </audio>
-
-</div>
-
-<!-- ARTISTS PAGE -->
-<div id="artists" class="page">
-
-  <button class="back" onclick="goHome()">⬅ უკან</button>
-
-  <h2>მხატვრები</h2>
-
-  <p>აქ დაამატე ქართველი მხატვრების ინფორმაცია 🎨</p>
-
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
+function share() {
+  alert("გაზიარება 📩");
+}
