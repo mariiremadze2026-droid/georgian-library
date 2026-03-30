@@ -1,40 +1,20 @@
 <!DOCTYPE html>
 <html lang="ka">
 <head>
-  <meta charset="UTF-8">
-  <title>Mafia Imposter Style</title>
-  <link rel="stylesheet" href="mafia.css">
+<meta charset="UTF-8">
+<title>მაფია</title>
+<link rel="stylesheet" href="mafia.css">
+<script src="mafia.js" defer></script>
 </head>
+
 <body>
 
-<h1>🕵️ Mafia Game</h1>
+<h1>🎮 Mafia Game</h1>
 
-<div id="setup">
-  <input id="nameInput" placeholder="მოთამაშის სახელი">
-  <button onclick="addPlayer()">➕ დამატება</button>
+<button onclick="startGame()">დაწყება</button>
 
-  <div id="players"></div>
+<br><br>
+<a href="index.html">⬅ უკან</a>
 
-  <button onclick="startGame()">🚀 დაწყება</button>
-</div>
-
-<!-- SECRET ROLE SCREEN -->
-<div id="roleScreen" class="hidden">
-  <h2 id="playerName"></h2>
-
-  <button onclick="showRole()">👁 ნახვა</button>
-
-  <div id="roleBox" class="hidden"></div>
-
-  <button onclick="nextPlayer()">➡️ შემდეგი</button>
-</div>
-
-<!-- GAME SCREEN -->
-<div id="gameScreen" class="hidden">
-  <h2 id="status"></h2>
-  <div id="log"></div>
-</div>
-
-<script src="mafia.js"></script>
 </body>
 </html>
